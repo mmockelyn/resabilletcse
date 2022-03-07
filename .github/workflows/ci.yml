@@ -93,34 +93,34 @@ jobs:
         run: php --version
 
 # Code quality
-deploy:
+  deploy:
 
-  runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
-  steps:
+    steps:
 
-    - name: Checkout
+      - name: Checkout
 
-      uses: actions/checkout@v2
+        uses: actions/checkout@v2
 
-    - name: Deployment
+      - name: Deployment
 
-      uses: appleboy/ssh-action@main
+        uses: appleboy/ssh-action@main
 
-      with:
+        with:
 
-        host: ${{ secrets.HOST_TEST }}
+          host: ${{ secrets.HOST_TEST }}
 
-        key: ${{ secrets.SSHKEY_TEST }}
+          key: ${{ secrets.SSHKEY_TEST }}
 
-        port: ${{ secrets.PORT_TEST }}
+          port: ${{ secrets.PORT_TEST }}
 
-        username: ${{ secrets.USERNAME }}
+          username: ${{ secrets.USERNAME }}
 
-        script: |
+          script: |
 
-          cd /home/ploi/beta.resabilletcse.com
+            cd /home/ploi/beta.resabilletcse.com
 
-          git checkout -f
+            git checkout -f
 
-          git pull
+            git pull
