@@ -136,7 +136,6 @@ jobs:
           deploy:
             runs-on: ubuntu-latest
             steps:
-              - uses: action/checkout@v2
               - name: Deploy On Server
                 uses: appleboy/ssh-action@master
                 with:
@@ -159,7 +158,6 @@ jobs:
           deploy:
             runs-on: ubuntu-latest
             steps:
-              - uses: action/checkout@v2
               - name: Deploy On Server Test
                 uses: appleboy/ssh-action@master
                 with:
