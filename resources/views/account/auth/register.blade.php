@@ -31,24 +31,6 @@
                             <!--end::Label-->
                         </div>
                         <!--end::Step 1-->
-                        <!--begin::Step 2-->
-                        <div class="stepper-item" data-kt-stepper-element="nav">
-                            <!--begin::Line-->
-                            <div class="stepper-line w-40px"></div>
-                            <!--end::Line-->
-                            <!--begin::Icon-->
-                            <div class="stepper-icon w-40px h-40px">
-                                <i class="stepper-check fas fa-check"></i>
-                                <span class="stepper-number">2</span>
-                            </div>
-                            <!--end::Icon-->
-                            <!--begin::Label-->
-                            <div class="stepper-label">
-                                <h3 class="stepper-title">Choix du plan</h3>
-                            </div>
-                            <!--end::Label-->
-                        </div>
-                        <!--end::Step 2-->
                         <!--begin::Step 3-->
                         <div class="stepper-item" data-kt-stepper-element="nav">
                             <!--begin::Line-->
@@ -57,7 +39,7 @@
                             <!--begin::Icon-->
                             <div class="stepper-icon w-40px h-40px">
                                 <i class="stepper-check fas fa-check"></i>
-                                <span class="stepper-number">3</span>
+                                <span class="stepper-number">2</span>
                             </div>
                             <!--end::Icon-->
                             <!--begin::Label-->
@@ -80,6 +62,7 @@
                     <!--begin::Step 1-->
                     <div class="current" data-kt-stepper-element="content">
                         <!--begin::Wrapper-->
+                        @csrf
                         <div class="w-100">
                             <!--begin::Heading-->
                             <div class="pb-10 pb-lg-15">
@@ -105,106 +88,6 @@
                         <!--end::Wrapper-->
                     </div>
                     <!--end::Step 1-->
-                    <!--begin::Step 2-->
-                    <div data-kt-stepper-element="content">
-                        <!--begin::Wrapper-->
-                        <div class="w-100">
-                            <!--begin::Heading-->
-                            <div class="pb-10 pb-lg-15">
-                                <!--begin::Title-->
-                                <h2 class="fw-bolder text-dark">Choix du plan</h2>
-                                <!--end::Title-->
-                                <!--begin::Notice-->
-                                <div class="text-muted fw-bold fs-6">Tous les plans ci-dessous son avec engagement Annuel</div>
-                                <!--end::Notice-->
-                            </div>
-                            <!--end::Heading-->
-                            <div data-kt-buttons="true">
-                                <!--begin::Radio button-->
-                                <label class="btn btn-outline btn-outline-dashed d-flex flex-stack text-start p-6 mb-5">
-                                    <!--end::Description-->
-                                    <div class="d-flex align-items-center me-2">
-                                        <!--begin::Radio-->
-                                        <div class="form-check form-check-custom form-check-solid form-check-primary me-6">
-                                            <input class="form-check-input" type="radio" name="plan" value="part"/>
-                                        </div>
-                                        <!--end::Radio-->
-
-                                        <!--begin::Info-->
-                                        <div class="flex-grow-1">
-                                            <h2 class="d-flex align-items-center fs-3 fw-bolder flex-wrap">
-                                                Particulier
-                                            </h2>
-                                            <div class="fw-bold opacity-50">
-                                                <ul>
-                                                    <li>Accès à la billetterie</li>
-                                                    <li>3 Ayants Droits</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <!--end::Info-->
-                                    </div>
-                                    <!--end::Description-->
-
-                                    <!--begin::Price-->
-                                    <div class="ms-5">
-                                        <span class="mb-2">€</span>
-                                        <span class="fs-2x fw-bolder">
-                15,00
-            </span>
-                                        <span class="fs-7 opacity-50">/
-                <span data-kt-element="period">Par mois</span>
-            </span>
-                                    </div>
-                                    <!--end::Price-->
-                                </label>
-                                <!--end::Radio button-->
-
-                                <!--begin::Radio button-->
-                                <label class="btn btn-outline btn-outline-dashed d-flex flex-stack text-start p-6 mb-5">
-                                    <!--end::Description-->
-                                    <div class="d-flex align-items-center me-2">
-                                        <!--begin::Radio-->
-                                        <div class="form-check form-check-custom form-check-solid form-check-primary me-6">
-                                            <input class="form-check-input" type="radio" name="plan" value="pro"/>
-                                        </div>
-                                        <!--end::Radio-->
-
-                                        <!--begin::Info-->
-                                        <div class="flex-grow-1">
-                                            <h2 class="d-flex align-items-center fs-3 fw-bolder flex-wrap">
-                                                Professionnel
-                                            </h2>
-                                            <div class="fw-bold opacity-50">
-                                                <ul>
-                                                    <li>Accès à la billetterie</li>
-                                                    <li>Accès à la partie voyage</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <!--end::Info-->
-                                    </div>
-                                    <!--end::Description-->
-
-                                    <!--begin::Price-->
-                                    <div class="ms-5">
-                                        <span class="mb-2">€</span>
-                                        <span class="fs-2x fw-bolder">
-                10,00
-            </span>
-                                        <span class="fs-7 opacity-50">/
-                <span data-kt-element="period">par mois (par salariés)</span>
-            </span>
-                                    </div>
-                                    <!--end::Price-->
-                                </label>
-                                <!--end::Radio button-->
-                            </div>
-                            <!--end::Radio group-->
-                        </div>
-                        <!--end::Wrapper-->
-                    </div>
-                    <!--end::Step 2-->
                     <!--begin::Step 3-->
                     <div data-kt-stepper-element="content">
                         <!--begin::Wrapper-->

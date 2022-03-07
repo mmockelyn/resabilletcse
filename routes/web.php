@@ -14,5 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 include("front.php");
+include("account.php");
 
 Auth::routes();
