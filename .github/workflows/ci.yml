@@ -145,6 +145,7 @@ jobs:
                   port: ${{ secret.PORT }}
                   key: ${{ secret.SSHKEY }}
                   script: cd /var/www/resabilletcse.com && ./.scripts/deploy.sh
+                  
       - name: Deploy Testing
           on:
             push:
