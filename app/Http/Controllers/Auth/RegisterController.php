@@ -3,11 +3,16 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\User\User;
+use App\Models\User\UserAccount;
 use App\Providers\RouteServiceProvider;
-use App\Models\User;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 
 class RegisterController extends Controller
 {
@@ -50,7 +55,8 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
+            'firstname' => ['required', 'string', 'max:255'],
+            'lastname' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
@@ -60,14 +66,91 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \App\Models\User
+     * @return User
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
+        $user = User::create([
+            'firstname' => $data['firstname'],
+            'lastname' => $data['lastname'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+        ]);
+
+        if($data['type_cpt'] != 5) {
+            $pro = $this->registerPro($data);
+            $this->registerUserAccount($data, $user->id, $pro->id);
+        }
+
+        return $user;
+    }
+
+    /**
+     * Handle a registration request for the application.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\JsonResponse
+     */
+    public function register(Request $request)
+    {
+        $this->validator($request->all())->validate();
+
+        event(new Registered($user = $this->create($request->all())));
+
+        $this->guard()->login($user);
+
+        if ($response = $this->registered($request, $user)) {
+            return $response;
+        }
+
+        return $request->wantsJson()
+            ? new JsonResponse([], 201)
+            : redirect()->route('account.subscribe');
+    }
+
+    /**
+     * The user has been registered.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  mixed  $user
+     * @return mixed
+     */
+    protected function registered(Request $request, $user)
+    {
+        $user->createAsStripeCustomer();
+        return $user;
+    }
+
+    /**
+     * Show the application registration form.
+     *
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
+    public function showRegistrationForm()
+    {
+        return view('account.auth.register');
+    }
+
+    private function registerPro($data)
+    {
+        return UserAccount::create([
+            'type' => ($data['type_cpt'] >= 0 && $data['type_cpt'] <= 2) ? 1 : 0,
+            'company' => $data['company'],
+            'reference' => ($data['type_cpt'] >= 0 && $data['type_cpt'] <= 2) ? "COM".Str::upper(Str::random(8)) : "ENT".Str::upper(Str::random(8)),
+            'siret' => $data['siret']
+        ]);
+    }
+
+    private function registerUserAccount($data, $user_id, $user_pro_id = null)
+    {
+        return UserAccount::create([
+            'address' => $data['address'],
+            'postal' => $data['postal'],
+            'city' => $data['city'],
+            'type_account' => $data['type_cpt'],
+            'nb_salarie' => $data['nb_salarie'],
+            'user_id' => $user_id,
+            'user_pro_id' => $user_pro_id,
         ]);
     }
 }
