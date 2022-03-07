@@ -145,26 +145,26 @@ jobs:
                   port: ${{ secret.PORT }}
                   key: ${{ secret.SSHKEY }}
                   script: cd /var/www/resabilletcse.com && ./.scripts/deploy.sh
-                  
-      - name: Deploy Testing
-          on:
-            push:
-              branches:
-                - master
-            pull_request:
-              branches:
-                - master
 
-          jobs:
-            deploy:
-              runs-on: ubuntu-latest
-              steps:
-                - uses: action/checkout@v2
-                - name: Deploy On Server Test
-                  uses: appleboy/ssh-action@master
-                  with:
-                    host: ${{ secret.HOST_TEST }}
-                    username: ${{ secret.USERNAME }}
-                    port: ${{ secret.PORT_TEST }}
-                    key: ${{ secret.SSHKEY_TEST }}
-                    script: cd /home/ploi/beta.resabilletcse.com && ./.scripts/deploy.sh
+      - name: Deploy Testing
+        on:
+          push:
+            branches:
+              - master
+          pull_request:
+            branches:
+              - master
+
+        jobs:
+          deploy:
+            runs-on: ubuntu-latest
+            steps:
+              - uses: action/checkout@v2
+              - name: Deploy On Server Test
+                uses: appleboy/ssh-action@master
+                with:
+                  host: ${{ secret.HOST_TEST }}
+                  username: ${{ secret.USERNAME }}
+                  port: ${{ secret.PORT_TEST }}
+                  key: ${{ secret.SSHKEY_TEST }}
+                  script: cd /home/ploi/beta.resabilletcse.com && ./.scripts/deploy.sh
