@@ -96,11 +96,7 @@ jobs:
 
 # Code quality
   deploy:
-    on:
-      push:
-        branches:
-          - master
-
+    
     needs: [laravel-tests]
 
     runs-on: ubuntu-latest
