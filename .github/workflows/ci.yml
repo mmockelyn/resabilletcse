@@ -164,6 +164,6 @@ jobs:
                   with:
                     host: ${{ secret.HOST_TEST }}
                     username: ${{ secret.USERNAME }}
-                    port: ${{ secret.PORT }}
-                    key: ${{ secret.SSHKEY }}
+                    port: ${{ secret.PORT_TEST }}
+                    key: ${{ secret.SSHKEY_TEST }}
                     script: cd /home/ploi/beta.resabilletcse.com && ./.scripts/deploy.sh
