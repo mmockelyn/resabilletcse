@@ -122,6 +122,4 @@ jobs:
 
             cd /home/ploi/beta.resabilletcse.com
 
-            git checkout -f
-
-            git pull
+            ./.scripts/deploy.sh

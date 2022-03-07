@@ -10,6 +10,8 @@ composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
 php artisan clear-compiled
 php artisan optimize
 
+chmod -R 777 storage/ bootstrap/
+
 php artisan migrate --force
 php artisan up
 echo "Deployment finished!"
