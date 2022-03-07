@@ -62,8 +62,6 @@ jobs:
           key: ${{ runner.OS }}-build-${{ hashFiles('**/composer.lock') }}
       - name: Copy .env
         run: php -r "file_exists('.env') || copy('.env.example', '.env');"
-      - name: Chmod Script Deploy
-        run: chmod -R 777 .scripts/deploy.sh
       - name: Install Dependencies
         if: steps.vendor-cache.outputs.cache-hit != 'true'
         run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
@@ -96,7 +94,6 @@ jobs:
 
 # Code quality
   deploy:
-    
     needs: [laravel-tests]
 
     runs-on: ubuntu-latest
@@ -124,5 +121,12 @@ jobs:
           script: |
 
             cd /home/ploi/beta.resabilletcse.com
+            php artisan down
+            git pull origin deploy
+            composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
+            php artisan clear-compiled
+            php artisan optimize
+            chmod -R 777 storage/ bootstrap/
+            php artisan migrate --force
+            php artisan up
 
-            ./.scripts/deploy.sh
