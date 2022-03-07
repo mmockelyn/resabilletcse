@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Cashier\Cashier;
 
@@ -30,6 +31,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        Schema::defaultStringLength(191);
         Cashier::calculateTaxes();
+
+        \View::composer('account.layouts.layout', function ($view) {
+            $title = config('account.'.\Route::currentRouteName());
+            $view->with(compact('title'));
+        });
     }
 }

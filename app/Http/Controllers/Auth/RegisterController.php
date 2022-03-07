@@ -84,4 +84,14 @@ class RegisterController extends Controller
         $user->createAsStripeCustomer();
         return $user;
     }
+
+    /**
+     * Show the application registration form.
+     *
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
+    public function showRegistrationForm()
+    {
+        return view('account.auth.register');
+    }
 }

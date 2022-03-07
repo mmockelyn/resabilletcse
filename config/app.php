@@ -196,7 +196,9 @@ return [
         'PDF' => Barryvdh\Snappy\Facades\SnappyPdf::class,
         'SnappyImage' => Barryvdh\Snappy\Facades\SnappyImage::class,
         'Gravatar' => Creativeorange\Gravatar\Facades\Gravatar::class,
-        'Image' => Intervention\Image\Facades\Image::class
+        'Image' => Intervention\Image\Facades\Image::class,
+        'SEO' => Artesaos\SEOTools\Facades\SEOTools::class,
+        'Insee' => NSpehler\LaravelInsee\Facades\Insee::class,
     ])->toArray(),
 
 ];
