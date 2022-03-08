@@ -1,0 +1,66 @@
+name: Release
+
+on:
+  pull_request:
+    types: [ labeled ]
+
+jobs:
+  prepare-release:
+    needs: [laravel-tests]
+    steps:
+      - name: Set Major Release
+        if: ${{ github.event.label.name == 'release-major' }}
+        run: echo "RELEASE=major" >> $GITHUB_ENV
+
+      - name: Set Minor Release
+        if: ${{ github.event.label.name == 'release-minor' }}
+        run: echo "RELEASE=minor" >> $GITHUB_ENV
+
+      - name: Set Patch Release
+        if: ${{ github.event.label.name == 'release-patch' }}
+        run: echo "RELEASE=patch" >> $GITHUB_ENV
+
+      - name: Check release env
+        run: |
+          if [[ -z "${{env.RELEASE}}" ]];
+          then
+            echo "You need to set a release label on PRs to the master branch"
+            exit 1
+          else
+            exit 0
+          fi
+
+      - name: Setup GIT
+        run: |
+          git fetch
+          git checkout ${{ github.event.pull_request.head.ref }}
+
+      - name: Prepare CHANGELOG
+        run: |
+          echo "${{ github.event.pull_request.body }}" | csplit -s - "/##/"
+          echo "# Changelog
+
+          ## ${{ env.VERSION }}
+          " >> CHANGELOG.tmp
+          grep "^*" xx01 >> CHANGELOG.tmp
+          grep -v "^# " CHANGELOG.md >> CHANGELOG.tmp
+          cp CHANGELOG.tmp CHANGELOG.md
+
+      - name: Prepare description
+        run: |
+          csplit -s CHANGELOG.md "/##/" {1}
+          cat xx01 > CHANGELOG.tmp
+
+      - name: Prepare tag
+        run: |
+          export TAG=$(head -1 CHANGELOG.tmp | cut -d' ' -f2)
+          echo "TAG=$TAG" >> $GITHUB_ENV
+
+      - name: Create Release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ env.TAG }}
+          release_name: ${{ env.TAG }}
+          body_path: CHANGELOG.tmp
