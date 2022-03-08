@@ -99,7 +99,7 @@ jobs:
         run: vendor/bin/phpunit --coverage-clover clover.xml
 
       - name: Upload Coverage Code into Codecov
-        script:
+        run:
           curl -Os https://uploader.codecov.io/latest/linux/codecov
           chmod +x codecov
           ./codecov
