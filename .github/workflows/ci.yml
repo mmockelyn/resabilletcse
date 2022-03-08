@@ -91,19 +91,6 @@ jobs:
       - name: PHP Version
         run: php --version
 
-      - name: Execute Testing
-        env:
-          SESSION_DRIVER: array
-          DB_CONNECTION: sqlite
-          DB_DATABASE: ":memory:"
-        run: vendor/bin/phpunit --coverage-clover clover.xml
-
-      - name: Upload Coverage Code into Codecov
-        run:
-          curl -Os https://uploader.codecov.io/latest/linux/codecov
-          chmod +x codecov
-          ./codecov
-
 # Code quality
   deploy:
     needs: [laravel-tests]
