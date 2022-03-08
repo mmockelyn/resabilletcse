@@ -2,55 +2,17 @@
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
   <file name="Input.php" path="/View/Components/Front/Form">
     <totals>
-      <lines total="88" comments="44" code="44" executable="12" executed="12" percent="100.00"/>
-      <methods count="2" tested="2" percent="100.00"/>
+      <lines total="88" comments="44" code="44" executable="12" executed="0" percent="0.00"/>
+      <methods count="2" tested="0" percent="0.00"/>
       <functions count="0" tested="0" percent="0"/>
-      <classes count="1" tested="1" percent="100.00"/>
+      <classes count="1" tested="0" percent="0.00"/>
       <traits count="0" tested="0" percent="0"/>
     </totals>
-    <class name="App\View\Components\Front\Form\Input" start="7" executable="12" executed="12" crap="2">
+    <class name="App\View\Components\Front\Form\Input" start="7" executable="12" executed="0" crap="6">
       <namespace name="App\View\Components\Front\Form"/>
-      <method name="__construct" signature="__construct($name, $type, $label, $value, $required, $autofocus, $placeholder, $help, $helpText, $text, $class)" start="60" end="76" crap="1" executable="11" executed="11" coverage="100"/>
-      <method name="render" signature="render()" start="83" end="86" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="__construct" signature="__construct($name, $type, $label, $value, $required, $autofocus, $placeholder, $help, $helpText, $text, $class)" start="60" end="76" crap="2" executable="11" executed="0" coverage="0"/>
+      <method name="render" signature="render()" start="83" end="86" crap="2" executable="1" executed="0" coverage="0"/>
     </class>
-    <coverage>
-      <line nr="65">
-        <covered by="Http\Controllers\Auth\RegisterControllerTest::testGetFormRegister"/>
-      </line>
-      <line nr="66">
-        <covered by="Http\Controllers\Auth\RegisterControllerTest::testGetFormRegister"/>
-      </line>
-      <line nr="67">
-        <covered by="Http\Controllers\Auth\RegisterControllerTest::testGetFormRegister"/>
-      </line>
-      <line nr="68">
-        <covered by="Http\Controllers\Auth\RegisterControllerTest::testGetFormRegister"/>
-      </line>
-      <line nr="69">
-        <covered by="Http\Controllers\Auth\RegisterControllerTest::testGetFormRegister"/>
-      </line>
-      <line nr="70">
-        <covered by="Http\Controllers\Auth\RegisterControllerTest::testGetFormRegister"/>
-      </line>
-      <line nr="71">
-        <covered by="Http\Controllers\Auth\RegisterControllerTest::testGetFormRegister"/>
-      </line>
-      <line nr="72">
-        <covered by="Http\Controllers\Auth\RegisterControllerTest::testGetFormRegister"/>
-      </line>
-      <line nr="73">
-        <covered by="Http\Controllers\Auth\RegisterControllerTest::testGetFormRegister"/>
-      </line>
-      <line nr="74">
-        <covered by="Http\Controllers\Auth\RegisterControllerTest::testGetFormRegister"/>
-      </line>
-      <line nr="75">
-        <covered by="Http\Controllers\Auth\RegisterControllerTest::testGetFormRegister"/>
-      </line>
-      <line nr="85">
-        <covered by="Http\Controllers\Auth\RegisterControllerTest::testGetFormRegister"/>
-      </line>
-    </coverage>
     <source>
       <line no="1">
         <token name="T_OPEN_TAG">&lt;?php</token>

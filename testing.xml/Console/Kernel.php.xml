@@ -2,47 +2,17 @@
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
   <file name="Kernel.php" path="/Console">
     <totals>
-      <lines total="33" comments="12" code="21" executable="2" executed="2" percent="100.00"/>
-      <methods count="1" tested="1" percent="100.00"/>
+      <lines total="33" comments="12" code="21" executable="2" executed="0" percent="0.00"/>
+      <methods count="1" tested="0" percent="0.00"/>
       <functions count="0" tested="0" percent="0"/>
-      <classes count="1" tested="1" percent="100.00"/>
+      <classes count="1" tested="0" percent="0.00"/>
       <traits count="0" tested="0" percent="0"/>
     </totals>
-    <class name="App\Console\Kernel" start="8" executable="2" executed="2" crap="2">
+    <class name="App\Console\Kernel" start="8" executable="2" executed="0" crap="6">
       <namespace name="App\Console"/>
       <method name="schedule" signature="schedule(Illuminate\Console\Scheduling\Schedule $schedule)" start="16" end="19" crap="1" executable="0" executed="0" coverage="100"/>
-      <method name="commands" signature="commands()" start="26" end="31" crap="1" executable="2" executed="2" coverage="100"/>
+      <method name="commands" signature="commands()" start="26" end="31" crap="2" executable="2" executed="0" coverage="0"/>
     </class>
-    <coverage>
-      <line nr="28">
-        <covered by="Http\Controllers\Api\VerifControllerTest::testSiretIsValid"/>
-        <covered by="Http\Controllers\Api\VerifControllerTest::testSiretIsInvalid"/>
-        <covered by="Http\Controllers\Auth\LoginControllerTest::testShowLoginForm"/>
-        <covered by="Http\Controllers\Auth\LoginControllerTest::testLoginIsValid"/>
-        <covered by="Http\Controllers\Auth\LoginControllerTest::testRedirectAccess"/>
-        <covered by="Http\Controllers\Auth\RegisterControllerTest::testGetFormRegister"/>
-        <covered by="Http\Controllers\Auth\RegisterControllerTest::testRegisterPartIsValid"/>
-        <covered by="Http\Controllers\Auth\RegisterControllerTest::testRegisterPartIsValidJson"/>
-        <covered by="Http\Controllers\Auth\RegisterControllerTest::testRegisterProIsValid"/>
-        <covered by="Http\Controllers\Auth\RegisterControllerTest::testRegisterPartIsInvalid"/>
-        <covered by="Http\Controllers\Auth\RegisterControllerTest::testRegisterProIsInvalid"/>
-        <covered by="Http\Controllers\HomeControllerTest::testIndex"/>
-      </line>
-      <line nr="30">
-        <covered by="Http\Controllers\Api\VerifControllerTest::testSiretIsValid"/>
-        <covered by="Http\Controllers\Api\VerifControllerTest::testSiretIsInvalid"/>
-        <covered by="Http\Controllers\Auth\LoginControllerTest::testShowLoginForm"/>
-        <covered by="Http\Controllers\Auth\LoginControllerTest::testLoginIsValid"/>
-        <covered by="Http\Controllers\Auth\LoginControllerTest::testRedirectAccess"/>
-        <covered by="Http\Controllers\Auth\RegisterControllerTest::testGetFormRegister"/>
-        <covered by="Http\Controllers\Auth\RegisterControllerTest::testRegisterPartIsValid"/>
-        <covered by="Http\Controllers\Auth\RegisterControllerTest::testRegisterPartIsValidJson"/>
-        <covered by="Http\Controllers\Auth\RegisterControllerTest::testRegisterProIsValid"/>
-        <covered by="Http\Controllers\Auth\RegisterControllerTest::testRegisterPartIsInvalid"/>
-        <covered by="Http\Controllers\Auth\RegisterControllerTest::testRegisterProIsInvalid"/>
-        <covered by="Http\Controllers\HomeControllerTest::testIndex"/>
-      </line>
-    </coverage>
     <source>
       <line no="1">
         <token name="T_OPEN_TAG">&lt;?php</token>

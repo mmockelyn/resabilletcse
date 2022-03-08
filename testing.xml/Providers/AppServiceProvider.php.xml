@@ -2,95 +2,17 @@
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
   <file name="AppServiceProvider.php" path="/Providers">
     <totals>
-      <lines total="43" comments="10" code="33" executable="10" executed="7" percent="70.00"/>
-      <methods count="2" tested="1" percent="50.00"/>
+      <lines total="43" comments="10" code="33" executable="10" executed="0" percent="0.00"/>
+      <methods count="2" tested="0" percent="0.00"/>
       <functions count="0" tested="0" percent="0"/>
       <classes count="1" tested="0" percent="0.00"/>
       <traits count="0" tested="0" percent="0"/>
     </totals>
-    <class name="App\Providers\AppServiceProvider" start="9" executable="10" executed="7" crap="4.43">
+    <class name="App\Providers\AppServiceProvider" start="9" executable="10" executed="0" crap="20">
       <namespace name="App\Providers"/>
-      <method name="register" signature="register()" start="16" end="25" crap="4.94" executable="5" executed="2" coverage="40"/>
-      <method name="boot" signature="boot()" start="32" end="41" crap="1" executable="5" executed="5" coverage="100"/>
+      <method name="register" signature="register()" start="16" end="25" crap="12" executable="5" executed="0" coverage="0"/>
+      <method name="boot" signature="boot()" start="32" end="41" crap="2" executable="5" executed="0" coverage="0"/>
     </class>
-    <coverage>
-      <line nr="18">
-        <covered by="Http\Controllers\Api\VerifControllerTest::testSiretIsValid"/>
-        <covered by="Http\Controllers\Api\VerifControllerTest::testSiretIsInvalid"/>
-        <covered by="Http\Controllers\Auth\LoginControllerTest::testShowLoginForm"/>
-        <covered by="Http\Controllers\Auth\LoginControllerTest::testLoginIsValid"/>
-        <covered by="Http\Controllers\Auth\LoginControllerTest::testRedirectAccess"/>
-        <covered by="Http\Controllers\Auth\RegisterControllerTest::testGetFormRegister"/>
-        <covered by="Http\Controllers\Auth\RegisterControllerTest::testRegisterPartIsValid"/>
-        <covered by="Http\Controllers\Auth\RegisterControllerTest::testRegisterPartIsValidJson"/>
-        <covered by="Http\Controllers\Auth\RegisterControllerTest::testRegisterProIsValid"/>
-        <covered by="Http\Controllers\Auth\RegisterControllerTest::testRegisterPartIsInvalid"/>
-        <covered by="Http\Controllers\Auth\RegisterControllerTest::testRegisterProIsInvalid"/>
-        <covered by="Http\Controllers\HomeControllerTest::testIndex"/>
-      </line>
-      <line nr="22">
-        <covered by="Http\Controllers\Api\VerifControllerTest::testSiretIsValid"/>
-        <covered by="Http\Controllers\Api\VerifControllerTest::testSiretIsInvalid"/>
-        <covered by="Http\Controllers\Auth\LoginControllerTest::testShowLoginForm"/>
-        <covered by="Http\Controllers\Auth\LoginControllerTest::testLoginIsValid"/>
-        <covered by="Http\Controllers\Auth\LoginControllerTest::testRedirectAccess"/>
-        <covered by="Http\Controllers\Auth\RegisterControllerTest::testGetFormRegister"/>
-        <covered by="Http\Controllers\Auth\RegisterControllerTest::testRegisterPartIsValid"/>
-        <covered by="Http\Controllers\Auth\RegisterControllerTest::testRegisterPartIsValidJson"/>
-        <covered by="Http\Controllers\Auth\RegisterControllerTest::testRegisterProIsValid"/>
-        <covered by="Http\Controllers\Auth\RegisterControllerTest::testRegisterPartIsInvalid"/>
-        <covered by="Http\Controllers\Auth\RegisterControllerTest::testRegisterProIsInvalid"/>
-        <covered by="Http\Controllers\HomeControllerTest::testIndex"/>
-      </line>
-      <line nr="34">
-        <covered by="Http\Controllers\Api\VerifControllerTest::testSiretIsValid"/>
-        <covered by="Http\Controllers\Api\VerifControllerTest::testSiretIsInvalid"/>
-        <covered by="Http\Controllers\Auth\LoginControllerTest::testShowLoginForm"/>
-        <covered by="Http\Controllers\Auth\LoginControllerTest::testLoginIsValid"/>
-        <covered by="Http\Controllers\Auth\LoginControllerTest::testRedirectAccess"/>
-        <covered by="Http\Controllers\Auth\RegisterControllerTest::testGetFormRegister"/>
-        <covered by="Http\Controllers\Auth\RegisterControllerTest::testRegisterPartIsValid"/>
-        <covered by="Http\Controllers\Auth\RegisterControllerTest::testRegisterPartIsValidJson"/>
-        <covered by="Http\Controllers\Auth\RegisterControllerTest::testRegisterProIsValid"/>
-        <covered by="Http\Controllers\Auth\RegisterControllerTest::testRegisterPartIsInvalid"/>
-        <covered by="Http\Controllers\Auth\RegisterControllerTest::testRegisterProIsInvalid"/>
-        <covered by="Http\Controllers\HomeControllerTest::testIndex"/>
-      </line>
-      <line nr="35">
-        <covered by="Http\Controllers\Api\VerifControllerTest::testSiretIsValid"/>
-        <covered by="Http\Controllers\Api\VerifControllerTest::testSiretIsInvalid"/>
-        <covered by="Http\Controllers\Auth\LoginControllerTest::testShowLoginForm"/>
-        <covered by="Http\Controllers\Auth\LoginControllerTest::testLoginIsValid"/>
-        <covered by="Http\Controllers\Auth\LoginControllerTest::testRedirectAccess"/>
-        <covered by="Http\Controllers\Auth\RegisterControllerTest::testGetFormRegister"/>
-        <covered by="Http\Controllers\Auth\RegisterControllerTest::testRegisterPartIsValid"/>
-        <covered by="Http\Controllers\Auth\RegisterControllerTest::testRegisterPartIsValidJson"/>
-        <covered by="Http\Controllers\Auth\RegisterControllerTest::testRegisterProIsValid"/>
-        <covered by="Http\Controllers\Auth\RegisterControllerTest::testRegisterPartIsInvalid"/>
-        <covered by="Http\Controllers\Auth\RegisterControllerTest::testRegisterProIsInvalid"/>
-        <covered by="Http\Controllers\HomeControllerTest::testIndex"/>
-      </line>
-      <line nr="37">
-        <covered by="Http\Controllers\Api\VerifControllerTest::testSiretIsValid"/>
-        <covered by="Http\Controllers\Api\VerifControllerTest::testSiretIsInvalid"/>
-        <covered by="Http\Controllers\Auth\LoginControllerTest::testShowLoginForm"/>
-        <covered by="Http\Controllers\Auth\LoginControllerTest::testLoginIsValid"/>
-        <covered by="Http\Controllers\Auth\LoginControllerTest::testRedirectAccess"/>
-        <covered by="Http\Controllers\Auth\RegisterControllerTest::testGetFormRegister"/>
-        <covered by="Http\Controllers\Auth\RegisterControllerTest::testRegisterPartIsValid"/>
-        <covered by="Http\Controllers\Auth\RegisterControllerTest::testRegisterPartIsValidJson"/>
-        <covered by="Http\Controllers\Auth\RegisterControllerTest::testRegisterProIsValid"/>
-        <covered by="Http\Controllers\Auth\RegisterControllerTest::testRegisterPartIsInvalid"/>
-        <covered by="Http\Controllers\Auth\RegisterControllerTest::testRegisterProIsInvalid"/>
-        <covered by="Http\Controllers\HomeControllerTest::testIndex"/>
-      </line>
-      <line nr="38">
-        <covered by="Http\Controllers\Auth\RegisterControllerTest::testGetFormRegister"/>
-      </line>
-      <line nr="39">
-        <covered by="Http\Controllers\Auth\RegisterControllerTest::testGetFormRegister"/>
-      </line>
-    </coverage>
     <source>
       <line no="1">
         <token name="T_OPEN_TAG">&lt;?php</token>
