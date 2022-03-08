@@ -5,18 +5,40 @@
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "require": {
-        "php": "^8.0.2",
+        "php": "^7.1 || ^8.0.2",
+        "artesaos/seotools": "^0.22.0",
+        "barryvdh/laravel-ide-helper": "^2.12",
+        "barryvdh/laravel-snappy": "^1.0",
+        "creativeorange/gravatar": "^1.0",
+        "graham-campbell/github": "^10.5",
         "guzzlehttp/guzzle": "^7.2",
+        "h4cc/wkhtmltopdf-i386": "^0.12.4",
+        "intervention/image": "^2.7",
+        "intervention/validation": "^3.1",
+        "knplabs/github-api": "^3.5",
+        "lab404/laravel-auth-checker": "^1.6",
+        "lab404/laravel-impersonate": "^1.7",
+        "laravel/cashier": "^13.8",
         "laravel/framework": "^9.2",
+        "laravel/horizon": "^5.9",
         "laravel/sanctum": "^2.14.1",
+        "laravel/telescope": "^4.7",
         "laravel/tinker": "^2.7",
-        "laravel/ui": "^3.4"
+        "laravel/ui": "^3.4",
+        "livewire/livewire": "^2.10",
+        "mmockelyn/aws-sdk-php-laravel": "^3.6",
+        "mmockelyn/laravel-insee": "dev-master",
+        "predis/predis": "^1.1",
+        "propaganistas/laravel-phone": "^4.3",
+        "spatie/laravel-slack-alerts": "^1.1"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
+        "laravel-lang/lang": "^10.4",
         "laravel/sail": "^1.0.1",
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^6.1",
+        "nunomaduro/patrol": "^1.1",
         "phpunit/phpunit": "^9.5.10",
         "spatie/laravel-ignition": "^1.0"
     },
@@ -25,7 +47,10 @@
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
-        }
+        },
+        "files": [
+            "app/helpers.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
@@ -49,7 +74,10 @@
     },
     "extra": {
         "laravel": {
-            "dont-discover": []
+            "dont-discover": [
+                "laravel/telescope",
+                "barryvdh/laravel-ide-helper"
+            ]
         }
     },
     "config": {

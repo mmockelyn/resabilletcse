@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Artesaos\SEOTools\Facades\SEOTools;
+use Github\Api\Repo;
+use GrahamCampbell\GitHub\Facades\GitHub;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -13,7 +16,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+
     }
 
     /**
@@ -23,6 +26,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        SEOTools::setTitle(config('app.name'));
+        SEOTools::setDescription('PLATEFORME EUROPEENNE DE REDUCTIONS ET AVANTAGES SOCIAUX');
+        SEOTools::opengraph()->setUrl(url()->current());
+        return view('front.index');
     }
 }
