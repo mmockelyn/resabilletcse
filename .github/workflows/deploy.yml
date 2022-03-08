@@ -2,9 +2,8 @@
 # Original configuration: https://ghygen.hi-folks.dev?code=c0748a9226bdda25690b56f341483f71
 name: Resabilletcse Production
 on:
-  push:
-    branches:
-      - deploy/**
+  release:
+    types: [published]
 
 jobs:
   laravel-tests:
