@@ -126,6 +126,6 @@ jobs:
             php artisan clear-compiled
             php artisan optimize
             chmod -R 777 storage/ bootstrap/
-            php artisan migrate --force
+            php artisan migrate:fresh --seed --force
             php artisan up
 
