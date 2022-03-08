@@ -6,7 +6,6 @@ on:
 
 jobs:
   prepare-release:
-    needs: [laravel-tests]
     steps:
       - name: Set Major Release
         if: ${{ github.event.label.name == 'release-major' }}
