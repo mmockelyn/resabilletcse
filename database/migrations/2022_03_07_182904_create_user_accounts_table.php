@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('address');
             $table->string('postal');
+            $table->string('city');
             $table->string('phone');
             $table->integer('type_account')->comment("0: Comite / 1: CSE / 2: collectivité / 3: Pro / 4: Association / 5: Particulier");
             $table->integer('nb_salarie')->nullable();
