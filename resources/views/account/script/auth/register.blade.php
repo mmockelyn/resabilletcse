@@ -26,7 +26,7 @@
         stepper.goPrevious(); // go previous step
     });
 
-    let inputCode = document.querySelector('#kt_share_earn_link_input')
+    let inputCode = document.querySelector('#code')
     let buttonCode = document.querySelector('#kt_share_earn_link_copy_button')
 
     buttonCode.addEventListener('click', e => {
@@ -36,7 +36,7 @@
 
     Inputmask({
         mask: '+33 9 99 99 99 99'
-    }).mask('#field_phone');
+    }).mask('#phone');
 
     const verifSiret = () => {
         let field_siret = document.querySelector('#field_siret');

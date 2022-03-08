@@ -75,8 +75,14 @@
                             <!--begin::Input group-->
                             <div class="fv-row">
                                 <div class="d-flex">
-                                    <input id="kt_share_earn_link_input" type="text" class="form-control form-control-solid me-3 flex-grow-1"
-                                           name="code" />
+                                    <x-front.form.input
+                                        name="code"
+                                        type="text"
+                                        label="Code D'inscription"
+                                        required="true"
+                                        autofocus
+                                        placeholder="Code reçu par un commercial ou cliquer sur 'générer'"
+                                        class="flex-grow-0"/>
 
                                     <button id="kt_share_earn_link_copy_button" class="btn btn-light fw-bolder flex-shrink-0"
                                             data-clipboard-target="#kt_share_earn_link_input" data-value="resabillet1">Générer un code</button>
@@ -102,18 +108,24 @@
                                 <!--end::Notice-->
                             </div>
                             <!--end::Heading-->
-                            <div class="fv-row mb-10">
-                                <label for="exampleFormControlInput1" class="required form-label">Adresse Mail</label>
-                                <input type="email" class="form-control form-control-solid" name="email" placeholder="Adresse Mail"/>
-                                @error('email')
-                                <div class="invalid-feedback">{{ $message }}</div>
-                                @enderror
-                            </div>
+                            <x-front.form.input
+                                name="email"
+                                type="email"
+                                label="Adresse Mail"
+                                required="true"
+                                autocomplete="on"
+                            />
                             <div class="fv-row mb-10" data-kt-password-meter="true">
-                                <label for="exampleFormControlInput1" class="required form-label">Mot de passe</label>
                                 <div class="position-relative mb-3">
-                                    <input class="form-control form-control-lg form-control-solid"
-                                           type="password" placeholder="Use 8 or more characters with a mix of letters, numbers & symbols." name="password" autocomplete="off" />
+                                    <x-front.form.input
+                                        name="password"
+                                        type="password"
+                                        label="Mot de passe"
+                                        required="true"
+                                        autocomplete="off"
+                                        placeholder="Use 8 or more characters with a mix of letters, numbers & symbols."
+                                        class="form-control-lg form-control-solid"
+                                    />
 
                                     <!--begin::Visibility toggle-->
                                     <span class="btn btn-sm btn-icon position-absolute translate-middle top-50 end-0 me-n2"
@@ -122,10 +134,6 @@
 
                                         <i class="bi bi-eye fs-2 d-none"></i>
                                     </span>
-                                    <!--end::Visibility toggle-->
-                                    @error('password')
-                                    <div class="invalid-feedback">{{ $message }}</div>
-                                    @enderror
                                 </div>
                                 <div class="d-flex align-items-center mb-3" data-kt-password-meter-control="highlight">
                                     <div class="flex-grow-1 bg-secondary bg-active-success rounded h-5px me-2"></div>
@@ -134,28 +142,28 @@
                                     <div class="flex-grow-1 bg-secondary bg-active-success rounded h-5px"></div>
                                 </div>
                             </div>
-                            <div class="fv-row mb-10">
-                                <label for="exampleFormControlInput1" class="required form-label">Confirmation du mot de passe</label>
-                                <input type="password" class="form-control form-control-solid" name="password_confirmation" placeholder=""/>
-                            </div>
+                            <x-front.form.input
+                                name="password_confirmation"
+                                type="password"
+                                label="Confirmation du mot de passe"
+                                required="true"
+                            />
                             <div class="row">
                                 <div class="col-md-6 col-sm-12">
-                                    <div class="fv-row mb-10">
-                                        <label for="exampleFormControlInput1" class="required form-label">Nom</label>
-                                        <input type="text" class="form-control form-control-solid" name="firstname" placeholder="Nom"/>
-                                        @error('firstname')
-                                        <div class="invalid-feedback">{{ $message }}</div>
-                                        @enderror
-                                    </div>
+                                    <x-front.form.input
+                                        name="firstname"
+                                        type="text"
+                                        label="Nom"
+                                        required="true"
+                                    />
                                 </div>
                                 <div class="col-md-6 col-sm-12">
-                                    <div class="fv-row mb-10">
-                                        <label for="exampleFormControlInput1" class="required form-label">Prénom</label>
-                                        <input type="text" class="form-control form-control-solid" name="lastname" placeholder="Prénom"/>
-                                        @error('lastname')
-                                        <div class="invalid-feedback">{{ $message }}</div>
-                                        @enderror
-                                    </div>
+                                    <x-front.form.input
+                                        name="lastname"
+                                        type="text"
+                                        label="Prénom"
+                                        required="true"
+                                    />
                                 </div>
                             </div>
                             <div class="fv-row mb-10">
@@ -240,65 +248,84 @@
                                 </div>
                             </div>
                             <div id="result_type_cpt_part">
-                                <div class="fv-row mb-10">
-                                    <label for="exampleFormControlInput1" class="required form-label">Adresse Postal</label>
-                                    <input type="text" class="form-control form-control-solid" name="address" placeholder="Addresse Postal"/>
-                                </div>
+                                <x-front.form.input
+                                    name="address"
+                                    type="text"
+                                    label="Adresse Postal"
+                                    required="true"
+                                />
                                 <div class="row">
                                     <div class="col-md-4 col-sm-12">
-                                        <div class="fv-row mb-10">
-                                            <label for="exampleFormControlInput1" class="required form-label">Code Postal</label>
-                                            <input type="text" class="form-control form-control-solid" name="postal" placeholder="Code Postal"/>
-                                        </div>
+                                        <x-front.form.input
+                                            name="postal"
+                                            type="text"
+                                            label="Code Postal"
+                                            required="true"
+                                        />
                                     </div>
                                     <div class="col-md-8 col-sm-12">
-                                        <div class="fv-row mb-10">
-                                            <label for="exampleFormControlInput1" class="required form-label">Ville</label>
-                                            <input type="text" class="form-control form-control-solid" name="city" placeholder="Ville"/>
-                                        </div>
+                                        <x-front.form.input
+                                            name="city"
+                                            type="text"
+                                            label="Ville"
+                                            required="true"
+                                        />
                                     </div>
                                 </div>
-                                <div class="fv-row mb-10">
-                                    <label for="exampleFormControlInput1" class="required form-label">Numéro de téléphone</label>
-                                    <input type="text" class="form-control form-control-solid" name="phone" id="field_phone"/>
-                                </div>
+                                <x-front.form.input
+                                    name="phone"
+                                    type="text"
+                                    label="Téléphone"
+                                    required="true"
+                                />
                             </div>
                             <div id="result_type_cpt_pro">
-                                <div class="fv-row mb-10">
-                                    <label for="exampleFormControlInput1" class="required form-label">Societe</label>
-                                    <input type="text" class="form-control form-control-solid" name="company" placeholder="Societe"/>
-                                </div>
+                                <x-front.form.input
+                                    name="company"
+                                    type="text"
+                                    label="Société"
+                                />
                                 <div class="fv-row mb-10">
                                     <label for="exampleFormControlInput1" class="required form-label">Siret</label>
                                     <input type="text" class="form-control form-control-solid" name="siret" id="field_siret" placeholder="Numéro de Siret" onkeyup="verifSiret()"/>
                                     <p id="help_siret"></p>
                                 </div>
-                                <div class="fv-row mb-10">
-                                    <label for="exampleFormControlInput1" class="required form-label">Adresse Postal</label>
-                                    <input type="text" class="form-control form-control-solid" name="address_pro" placeholder="Addresse Postal"/>
-                                </div>
+                                <x-front.form.input
+                                    name="address_pro"
+                                    type="text"
+                                    label="Adresse Postal"
+                                />
                                 <div class="row">
                                     <div class="col-md-4 col-sm-12">
-                                        <div class="fv-row mb-10">
-                                            <label for="exampleFormControlInput1" class="required form-label">Code Postal</label>
-                                            <input type="text" class="form-control form-control-solid" name="postal_pro" placeholder="Code Postal"/>
-                                        </div>
+                                        <x-front.form.input
+                                            name="postal_pro"
+                                            type="text"
+                                            label="Code Postal"
+                                            required="true"
+                                        />
                                     </div>
                                     <div class="col-md-8 col-sm-12">
-                                        <div class="fv-row mb-10">
-                                            <label for="exampleFormControlInput1" class="required form-label">Ville</label>
-                                            <input type="text" class="form-control form-control-solid" name="city_pro" placeholder="Ville"/>
-                                        </div>
+                                        <x-front.form.input
+                                            name="city_pro"
+                                            type="text"
+                                            label="Ville"
+                                            required="true"
+                                        />
                                     </div>
                                 </div>
-                                <div class="fv-row mb-10">
-                                    <label for="exampleFormControlInput1" class="required form-label">Numéro de téléphone</label>
-                                    <input type="text" class="form-control form-control-solid" name="phone" id="field_phone"/>
-                                </div>
-                                <div class="fv-row mb-10">
-                                    <label for="exampleFormControlInput1" class="required form-label">Nombre de salarié <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip" title="Insérez le nombre de salarié de l'entreprise tous secteurs confondue, y compris vous !"></i></label>
-                                    <input type="text" class="form-control form-control-solid" name="nb_salarie" placeholder="Nombre de Salarié"/>
-                                </div>
+                                <x-front.form.input
+                                    name="phone"
+                                    type="text"
+                                    label="Téléphone"
+                                    required="true"
+                                />
+                                <x-front.form.input
+                                    name="nb_salarie"
+                                    type="text"
+                                    label="Nombre de salarie"
+                                    help="true"
+                                    help-text="Insérez le nombre de salarié de l'entreprise tous secteurs confondue, y compris vous !"
+                                />
                             </div>
                         </div>
                         <!--end::Wrapper-->
