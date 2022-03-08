@@ -21,4 +21,11 @@ class Github
 
         return $gh['tag_name'];
     }
+
+    public static function GetWorkflows()
+    {
+        $gh = \GrahamCampbell\GitHub\Facades\GitHub::repo()->workflowRuns()->all('mmockelyn', 'resabilletcse');
+
+        return $gh;
+    }
 }
