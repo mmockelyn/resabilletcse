@@ -109,17 +109,17 @@ jobs:
 
         with:
 
-          host: ${{ secrets.HOST }}
+          host: ${{ secrets.HOST_TEST }}
 
-          key: ${{ secrets.SSHKEY }}
+          key: ${{ secrets.SSHKEY_TEST }}
 
-          port: ${{ secrets.PORT }}
+          port: ${{ secrets.PORT_TEST }}
 
           username: ${{ secrets.USERNAME }}
 
           script: |
 
-            cd /var/www/resabilletcse.com
+            cd /home/ploi/v2.resabilletcse.com
             php artisan down
             git pull origin deploy
             composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
