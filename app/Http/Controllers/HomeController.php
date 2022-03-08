@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Artesaos\SEOTools\Facades\SEOTools;
+use Github\Api\Repo;
+use GrahamCampbell\GitHub\Facades\GitHub;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller

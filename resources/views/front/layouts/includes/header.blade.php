@@ -23,6 +23,21 @@
                             </nav>
                         </div>
                     </div>
+                    <div class="header-column justify-content-end">
+                        <div class="header-row">
+                            <nav class="header-nav-top">
+                                <ul class="nav nav-pills">
+                                    <li class="nav-item nav-item-borders py-2 d-none d-lg-inline-flex">
+                                        @if(config('app.env') == 'local')
+                                            <strong>V.</strong>{{ \App\Services\Github::latestMasterVersion() }}
+                                        @else
+                                            <strong>V.</strong>{{ \App\Services\Github::latestDeployVersion() }}
+                                        @endif
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
