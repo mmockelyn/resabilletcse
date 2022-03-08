@@ -24,7 +24,7 @@ return [
     |
     */
 
-    'default' => 'main',
+    'default' => 'app',
 
     /*
     |--------------------------------------------------------------------------
@@ -51,8 +51,8 @@ return [
 
         'app' => [
             'method'       => 'application',
-            'clientId'     => 'your-client-id',
-            'clientSecret' => 'your-client-secret',
+            'clientId'     => '2a6b80aa43a11c570be0',
+            'clientSecret' => '5058104b096db0f88dc0f641d509d7c0ac3c232d',
             // 'backoff'      => false,
             // 'cache'        => false,
             // 'version'      => 'v3',
