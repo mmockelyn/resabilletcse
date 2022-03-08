@@ -121,7 +121,7 @@ jobs:
 
             cd /home/ploi/beta.resabilletcse.com
             php artisan down
-            git pull origin deploy
+            git pull origin master
             composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
             php artisan clear-compiled
             php artisan optimize
