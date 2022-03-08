@@ -97,7 +97,6 @@ jobs:
           DB_CONNECTION: sqlite
           DB_DATABASE: ":memory:"
         run: vendor/bin/phpunit --coverage-clover clover.xml
-        uses: symfonycorp/security-checker-action@v2
 
       - name: Upload Coverage Code into Codecov
         script:
