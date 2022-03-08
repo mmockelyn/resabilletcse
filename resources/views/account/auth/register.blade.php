@@ -105,6 +105,9 @@
                             <div class="fv-row mb-10">
                                 <label for="exampleFormControlInput1" class="required form-label">Adresse Mail</label>
                                 <input type="email" class="form-control form-control-solid" name="email" placeholder="Adresse Mail"/>
+                                @error('email')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="fv-row mb-10" data-kt-password-meter="true">
                                 <label for="exampleFormControlInput1" class="required form-label">Mot de passe</label>
@@ -120,6 +123,9 @@
                                         <i class="bi bi-eye fs-2 d-none"></i>
                                     </span>
                                     <!--end::Visibility toggle-->
+                                    @error('password')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
                                 </div>
                                 <div class="d-flex align-items-center mb-3" data-kt-password-meter-control="highlight">
                                     <div class="flex-grow-1 bg-secondary bg-active-success rounded h-5px me-2"></div>
@@ -137,12 +143,18 @@
                                     <div class="fv-row mb-10">
                                         <label for="exampleFormControlInput1" class="required form-label">Nom</label>
                                         <input type="text" class="form-control form-control-solid" name="firstname" placeholder="Nom"/>
+                                        @error('firstname')
+                                        <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-sm-12">
                                     <div class="fv-row mb-10">
                                         <label for="exampleFormControlInput1" class="required form-label">Prénom</label>
                                         <input type="text" class="form-control form-control-solid" name="lastname" placeholder="Prénom"/>
+                                        @error('lastname')
+                                        <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                 </div>
                             </div>
@@ -157,6 +169,9 @@
                                     <option value="4">Association</option>
                                     <option value="5">Particulier</option>
                                 </select>
+                                @error('type_cpt')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div id="result_type_cpt_comite">
                                 <div class="alert alert-dismissible bg-primary d-flex flex-column flex-sm-row w-100 p-5 mb-10">

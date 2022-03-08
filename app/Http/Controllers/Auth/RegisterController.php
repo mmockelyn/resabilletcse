@@ -54,11 +54,13 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        dd($data);
         return Validator::make($data, [
             'firstname' => ['required', 'string', 'max:255'],
             'lastname' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'code' => ['required']
         ]);
     }
 
@@ -76,7 +78,8 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
-
+        $user->createAsStripeCustomer();
+        $this->registerUserAccount($data, $user->id);
         if($data['type_cpt'] != 5) {
             $pro = $this->registerPro($data);
             $this->registerUserAccount($data, $user->id, $pro->id);
@@ -105,20 +108,7 @@ class RegisterController extends Controller
 
         return $request->wantsJson()
             ? new JsonResponse([], 201)
-            : redirect()->route('account.subscribe');
-    }
-
-    /**
-     * The user has been registered.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  mixed  $user
-     * @return mixed
-     */
-    protected function registered(Request $request, $user)
-    {
-        $user->createAsStripeCustomer();
-        return $user;
+            : redirect($this->redirectPath());
     }
 
     /**
@@ -147,6 +137,7 @@ class RegisterController extends Controller
             'address' => $data['address'],
             'postal' => $data['postal'],
             'city' => $data['city'],
+            'phone' => $data['phone'],
             'type_account' => $data['type_cpt'],
             'nb_salarie' => $data['nb_salarie'],
             'user_id' => $user_id,
