@@ -199,6 +199,7 @@ return [
         'Image' => Intervention\Image\Facades\Image::class,
         'SEO' => Artesaos\SEOTools\Facades\SEOTools::class,
         'Insee' => NSpehler\LaravelInsee\Facades\Insee::class,
+        'GitHub' => GrahamCampbell\GitHub\Facades\GitHub::class,
     ])->toArray(),
 
 ];
