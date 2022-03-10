@@ -63,4 +63,13 @@ class User extends Authenticatable implements HasLoginsAndDevicesInterface
     {
         return $this->hasOne(UserPro::class);
     }
+
+    protected function getActiveAttribute($value)
+    {
+        if($value == 0) {
+            return false;
+        } else {
+            return true;
+        }
+    }
 }

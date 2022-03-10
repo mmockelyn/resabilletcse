@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User\User;
 use Artesaos\SEOTools\Facades\SEOTools;
 use Github\Api\Repo;
 use GrahamCampbell\GitHub\Facades\GitHub;

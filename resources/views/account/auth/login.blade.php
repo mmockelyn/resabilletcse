@@ -26,7 +26,8 @@
         <div class="row justify-content-center">
             <div class="col-md-4 col-lg-4 mb-5 mb-lg-0">
                 <h2 class="font-weight-bold text-5 mb-0">Connexion</h2>
-                <form action="/" id="frmSignIn" method="post" class="needs-validation">
+                <form action="{{ route('login') }}" id="frmSignIn" method="post" class="needs-validation">
+                    @csrf
                     <div class="row">
                         <div class="form-group col">
                             <label class="form-label text-color-dark text-3">Adresse Email <span class="text-color-danger">*</span></label>

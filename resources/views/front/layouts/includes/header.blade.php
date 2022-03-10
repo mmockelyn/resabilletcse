@@ -74,11 +74,6 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a class="{{ currentRouteActiveFront('front.voyage.index') }}" href="{{ route('front.voyage.index') }}">
-                                                Voyage - Loisir - Shopping
-                                            </a>
-                                        </li>
-                                        <li>
                                             <a class="{{ currentRouteActiveFront('front.partenaire.index') }}" href="{{ route('front.partenaire.index') }}">
                                                 Nos partenaires
                                             </a>
@@ -95,13 +90,45 @@
                                 <i class="fas fa-bars"></i>
                             </button>
                         </div>
-                        <div class="header-nav-features header-nav-features-no-border header-nav-features-lg-show-border order-1 order-lg-2">
-                            <div class="header-nav-feature header-nav-features-cart d-inline-flex ms-2">
-                                <a href="{{ route('login') }}" class="" data-bs-toggle="tooltip" title="Connexion">
-                                    <img src="/back/assets/media/icons/duotune/communication/com006.svg" width="24" alt="" class="header-nav-top-icon-img">
-                                </a>
+                        @guest()
+                            <div class="header-nav-features header-nav-features-no-border header-nav-features-lg-show-border order-1 order-lg-2">
+                                <div class="header-nav-feature header-nav-features-cart d-inline-flex ms-2">
+                                    <a href="{{ route('login') }}" class="" data-bs-toggle="tooltip" title="Connexion">
+                                        <img src="/back/assets/media/icons/duotune/communication/com006.svg" width="24" alt="" class="header-nav-top-icon-img">
+                                    </a>
+                                </div>
                             </div>
-                        </div>
+                        @else
+                            <div class="header-nav-features header-nav-features-no-border header-nav-features-lg-show-border order-1 order-lg-2">
+                                <div class="header-nav-feature header-nav-features-user header-nav-features-user-logged d-inline-flex mx-2 pe-2" id="headerAccount">
+                                    <a href="#" class="header-nav-features-toggle">
+                                        <i class="far fa-user"></i> {{ auth()->user()->lastname }} {{ auth()->user()->firstname }}
+                                    </a>
+                                    <div class="header-nav-features-dropdown header-nav-features-dropdown-mobile-fixed header-nav-features-dropdown-force-right" id="headerTopUserDropdown">
+                                        <div class="row">
+                                            <div class="col-8">
+                                                <p class="mb-0 pb-0 text-2 line-height-1 pt-1">Bonjour,</p>
+                                                <p><strong class="text-color-dark text-4">{{ auth()->user()->lastname }} {{ auth()->user()->firstname }}</strong></p>
+                                            </div>
+                                            <div class="col-4">
+                                                <div class="d-flex justify-content-end">
+                                                    <img class="rounded-circle" width="40" height="40" alt="" src="{{ Gravatar::get(auth()->user()->email) }}">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <ul class="nav nav-list-simple flex-column text-3">
+                                                    <li class="nav-item"><a class="nav-link" href="#">My Profile</a></li>
+                                                    <li class="nav-item"><a class="nav-link" href="#">My Orders</a></li>
+                                                    <li class="nav-item"><a class="nav-link border-bottom-0" href="#">Log Out</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endguest
                     </div>
                 </div>
             </div>
