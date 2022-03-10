@@ -119,9 +119,8 @@
                                         <div class="row">
                                             <div class="col">
                                                 <ul class="nav nav-list-simple flex-column text-3">
-                                                    <li class="nav-item"><a class="nav-link" href="#">My Profile</a></li>
-                                                    <li class="nav-item"><a class="nav-link" href="#">My Orders</a></li>
-                                                    <li class="nav-item"><a class="nav-link border-bottom-0" href="#">Log Out</a></li>
+                                                    <li class="nav-item"><a class="nav-link" href="#">Mon Compte</a></li>
+                                                    <li class="nav-item"><a class="nav-link border-bottom-0 logout" href="{{ route('logout') }}">Déconnexion</a></li>
                                                 </ul>
                                             </div>
                                         </div>
